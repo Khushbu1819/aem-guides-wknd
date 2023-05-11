@@ -1,0 +1,17 @@
+<div data-sly-use.model="com.adobe.aem.guides.wknd.core.models.TeaserComponentModel" 
+data-sly-use.model1="com.adobe.cq.wcm.core.components.models.Teaser"
+data-sly-use.placeholderTemplate="core/wcm/components/commons/v1/templates.html">
+
+<div class="pretitle">${model1.title}</div>
+<div class="cmp-teasercomponent">
+<div class="cmp-teasercomponent__text">${model.text} </div>
+    <div class="cmp-teasercomponent__item" data-sly-list.item="${model.multiFieldcollection}">
+        <div class="cmp-teasercomponent__item--title">${item.title}</div>
+        <div class="cmp-teasercomponent__item--image"><img src="${item.image}"></div>
+
+    </div>
+
+</div>
+ 
+</div>
+

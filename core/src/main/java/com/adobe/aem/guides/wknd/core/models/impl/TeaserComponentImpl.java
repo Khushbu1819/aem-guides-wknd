@@ -42,9 +42,6 @@ public class TeaserComponentImpl implements TeaserComponentModel {
     @ValueMapValue
     private String text;
 
-    @ValueMapValue
-    private String title;
-
     @Inject
     @Via("resource")
     private List<MultiFieldCollectionItem> multifieldcollection;
@@ -64,8 +61,8 @@ public class TeaserComponentImpl implements TeaserComponentModel {
 
                 MultiFieldCollectionItem teaserData = new MultiFieldCollectionItem();
 
-                teaserData.setTitle(card.getValueMap().get("title", String.class));
-                teaserData.setImage(card.getValueMap().get("image", String.class));
+                teaserData.setDescription(card.getValueMap().get("description", String.class));
+                teaserData.setDetail(card.getValueMap().get("detail", String.class));
                 multifieldcollection.add(teaserData);
                 LOG.info(teaserData.toString());
                 // LOG.info(teaser.getPretitle());
@@ -83,21 +80,4 @@ public class TeaserComponentImpl implements TeaserComponentModel {
     public List<MultiFieldCollectionItem> getMultiFieldcollection() {
         return multifieldcollection;
     }
-
-    @Override
-    public String getTitle() {
-        return title;
-    }
-
-    // @Override
-    // public String getTitle() {
-    //     // TODO Auto-generated method stub
-    //     throw new UnsupportedOperationException("Unimplemented method 'getTitle'");
-    // }
-
-    // public String getTitle() {
-    //     return title;
-
-    // }
-
 }

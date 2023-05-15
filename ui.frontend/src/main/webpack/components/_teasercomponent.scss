@@ -1,88 +1,128 @@
 .cmp-teasercomponent {
-    width: 100%;
-    height: 100%;
+    width: $max-width;
+    height: $max-height;
+    position: absolute;
+    background-size: cover;
+    background-repeat: no-repeat;
 
-    &__text {
+    &__container {
+        background-color:$color-background;
+        // float: right;
+        position: static;
+        width: 20%;
+        margin-right: 110px;
+        padding: 10px;
+        position: absolute;
+        bottom: 150px;
+        right: 25px;
+      
 
-        color: blue;
-        font-size: 25px;
-
-    }
-
-    &__item {
-        text-align: center;
-        letter-spacing: 1px;
-        background-color: black;
-
-        &--title {
-
-            color: red;
-
-            font-size: 25px;
+        &-text {
+            font-size:$font-size-md;
+            margin-bottom: 20px;
+            text-align: center;
 
         }
 
-        &--image {
-            img {
-                width: 50%;
-                height: 50%;
+        &-pretitle {
+
+            margin-bottom: 20px;
+            font-size: $font-size-xsm;
+            text-align: center;
+        }
+
+        &-item {
+            text-align: center;
+            letter-spacing: $letter-spacing;
+            font-size: $font-size-sm;
+            display: flex;
+           
+
+            &-button {
+                display: flex;
+                flex-direction: column;
+                background-color: $color-background-green;
+                margin-left: 40px;
+                width: 75px;
+                white-space: nowrap;
+                margin-right: 5px;
+
+
+                &--detail {
+                    color:$color-background-dark;
+                }
             }
-
         }
     }
+
+    &.cmp-image-top {
+        .cmp-teasercomponent__container{
+           top: 0;
+        }
+    
+    }
+    
+    &.cmp-text-bottom {
+        .cmp-teasercomponent__container-text {
+           position: fixed;
+    
+        }
+    }
+    
+    &.cmp-text-top {
+        .cmp-teasercomponent__container-text {
+            position: fixed;
+            top: 0;
+
+            
+    
+        }
+    }
+    
+    &.cmp-image-bottom {
+        .cmp-teasercomponent__container{
+       bottom: 0;
+       }
+    }
+    
+    &.cmp-image-left {
+        .cmp-teasercomponent__container {
+            left: 0;
+        }
+    }
+    
+    &.cmp-image-right {
+        .cmp-teasercomponent__container {
+            right: 0;
+        }
+    }
+    
+    &.cmp-without-image {
+        .cmp-teasercomponent{
+            display: none;
+        }
+    }
+    
+    &.cmp-blue-color {
+        .cmp-teasercomponent__container{
+            background-color: $color-link;
+        }
+    }
+    
+    &.cmp-red-color {
+        .cmp-teasercomponent__container {
+            background-color: $color-background-red;
+        }
+    
+        ;
+    }
+    
+    &.cmp-green-color {
+        .cmp-teasercomponent__container {
+            background-color: $color-background-green;
+        }
+    }
+
 }
 
-.cmp-image-top{
-    .cmp-teasercomponent__item--image{
-        padding-top: 30px;
-    }
 
-}
-.cmp-text-bottom{
-    .cmp-teasercomponent__item--title{
-       padding-bottom: 50px;
-        
-    }
-}
-
-.cmp-text-top{
-    .cmp-teasercomponent__item--title{
-          padding-top: 60px; 
-          }
-}
-.cmp-image-bottom{
-    align-items: end;
-}
-
-.cmp-image-left{
-    .cmp-teasercomponent__item--image{
-  padding-left: 30%;
-    }
-}
-
-.cmp-image-right{
-    .cmp-teasercomponent__item--image{
-        margin-right: 40%;
-    }
-}
-
-.cmp-without-image{
-    .cmp-teasercomponent__item--image{
-        display: none;
-    }
-}
-.cmp-blue-color{
-    .cmp-teasercomponent__item{
-        background-color: blue;
-    }
-}
-.cmp-red-color{
-    .cmp-teasercomponent__item{
-        background-color: red
-    };
-}
-.cmp-green-color{
-    .cmp-teasercomponent__item{
-        background-color: green;
-    }
-}

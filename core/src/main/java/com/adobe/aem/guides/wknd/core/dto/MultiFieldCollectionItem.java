@@ -2,23 +2,25 @@ package com.adobe.aem.guides.wknd.core.dto;
 
 public class MultiFieldCollectionItem {
 
-    String title;
-    String image;
+    String description;
+    String detail;
 
-    public String getTitle() {
-        return title;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public String getDetail() {
+        return detail;
     }
 
-    public String getImage() {
-        return image;
+    public void setDetail(String detail) {
+        this.detail = detail;
     }
 
-    public void setImage(String image) {
-        this.image = image;
+    public String getDescription() {
+        return description;
     }
+
+   
 
 }

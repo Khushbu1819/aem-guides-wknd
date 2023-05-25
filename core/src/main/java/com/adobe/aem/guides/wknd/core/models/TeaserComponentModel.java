@@ -9,4 +9,6 @@ public interface TeaserComponentModel {
 
     List<MultiFieldCollectionItem> getMultiFieldcollection();
 
+    boolean isEmpty();
+
 }

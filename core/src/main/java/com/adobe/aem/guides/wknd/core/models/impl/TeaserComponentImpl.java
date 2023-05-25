@@ -1,5 +1,6 @@
 package com.adobe.aem.guides.wknd.core.models.impl;
 
+import org.apache.commons.lang3.StringUtils;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -31,10 +32,6 @@ public class TeaserComponentImpl implements TeaserComponentModel {
 
     protected static final String RESOURCE_TYPE = "wknd/components/teasercomponent";
 
-    // @Self
-    // @Via(type = ResourceSuperType.class)
-    // private Teaser teaser;
-
     @Inject
     @SlingObject
     Resource componentResource;
@@ -48,7 +45,6 @@ public class TeaserComponentImpl implements TeaserComponentModel {
 
     @PostConstruct
     public void init() {
-        // LOG.info(teaser.getPretitle());
         multifieldcollection = new ArrayList<>();
 
         Resource res = componentResource.getChild("multifieldcollection");
@@ -61,8 +57,8 @@ public class TeaserComponentImpl implements TeaserComponentModel {
 
                 MultiFieldCollectionItem teaserData = new MultiFieldCollectionItem();
 
+                teaserData.setTitle(card.getValueMap().get("title", String.class));
                 teaserData.setDescription(card.getValueMap().get("description", String.class));
-                teaserData.setDetail(card.getValueMap().get("detail", String.class));
                 multifieldcollection.add(teaserData);
                 LOG.info(teaserData.toString());
                 // LOG.info(teaser.getPretitle());
@@ -79,5 +75,12 @@ public class TeaserComponentImpl implements TeaserComponentModel {
     @Override
     public List<MultiFieldCollectionItem> getMultiFieldcollection() {
         return multifieldcollection;
+    }
+
+    @Override
+
+    public boolean isEmpty() {
+
+        return StringUtils.isBlank(text);
     }
 }

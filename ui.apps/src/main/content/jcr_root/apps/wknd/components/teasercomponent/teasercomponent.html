@@ -1,26 +1,26 @@
-<sly>
-    <div data-sly-use.model="com.adobe.aem.guides.wknd.core.models.TeaserComponentModel"
-        data-sly-use.model1="com.adobe.cq.wcm.core.components.models.Teaser"
-        data-sly-use.image="com.adobe.cq.wcm.core.components.models.Image"
-        data-sly-use.templates="core/wcm/components/commons/v1/templates.html" class="cmp-teasercomponent" >
-        
-        <div class="cmp-teasercomponent__bg" style="background-image:url(${image.src @ context='uri'})">
-            <div class="cmp-teasercomponent__container">
-                <div class="cmp-teasercomponent__container-text">${model.text}</div>
-                <div class="cmp-teasercomponent__container-pretitle">${model1.pretitle}</div>
+<sly data-sly-use.model="com.adobe.aem.guides.wknd.core.models.TeaserComponentModel"
+    data-sly-use.model1="com.adobe.cq.wcm.core.components.models.Teaser"
+    data-sly-use.image="com.adobe.cq.wcm.core.components.models.Image"
+    data-sly-use.templates="core/wcm/components/commons/v1/templates.html">
+    <sly data-sly-test="${!model.isEmpty}">
+        <div class="cmp-teasercomponent">
 
-                <div class="cmp-teasercomponent__container-item" data-sly-list.item="${model.multiFieldcollection}">
-                    <div class="cmp-teasercomponent__container-item-button">
-                    <div class="cmp-teasercomponent__container-item-button--title">${item.title}</div>
-                    <div class="cmp-teasercomponent__container-item--button--description">${item.description @context='html'}</div>
-                </div>
-                </div>
+            <div class="cmp-teasercomponent__bg" style="background-image:url(${image.src @ context='uri'})">
+                <div class="cmp-teasercomponent__container">
+                    <div class="cmp-teasercomponent__container-text">${model.text}</div>
+                    <div class="cmp-teasercomponent__container-pretitle">${model1.pretitle}</div>
 
+                    <div class="cmp-teasercomponent__container-item" data-sly-list.item="${model.multiFieldcollection}">
+                        <div class="cmp-teasercomponent__container-item-button">
+                            <div class="cmp-teasercomponent__container-item-button--title">${item.title}</div>
+                            <div class="cmp-teasercomponent__container-item--button--description">${item.description
+                                @context='html'}</div>
+                        </div>
+                    </div>
+
+                </div>
             </div>
         </div>
-    </div>
-    <sly data-sly-call="${templates.placeholder @ isEmpty = !model.text}"></sly>
-</sly> 
-
-
-
+    </sly>
+    <sly data-sly-call="${templates.placeholder @ isEmpty = model.isEmpty}"></sly>
+</sly>

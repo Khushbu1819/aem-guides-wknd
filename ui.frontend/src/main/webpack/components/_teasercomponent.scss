@@ -1,26 +1,49 @@
 .cmp-teasercomponent {
+    position: relative;
     width: $max-width;
     height: $max-height;
-    position: absolute;
-    background-size: cover;
-    background-repeat: no-repeat;
+
+    &__bg {
+        min-height: 500px;
+        background-size: cover;
+        background-position: center;
+
+        @include min-screen(md) {
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: $max-height;
+            min-height: 600px;
+            position: relative;
+            background-position: center;
+        }
+    }
 
     &__container {
-        background-color:$color-background;
-        // float: right;
-        position: static;
-        width: 20%;
-        margin-right: 110px;
-        padding: 10px;
-        position: absolute;
+        padding: 13px;
+        width: 70%;
+        background-color: $color-background;
         bottom: 150px;
-        right: 25px;
-      
+        position: absolute;
+        right: 30px;
+
+
+        @include min-screen(md) {
+            background-color: $color-background;
+            position: static;
+            width: 35%;
+            padding: 10px;
+            position: absolute;
+            bottom: 150px;
+            right: 50px;
+            height: 33%;
+        }
+
 
         &-text {
-            font-size:$font-size-md;
+            font-size: $font-size-md;
             margin-bottom: 20px;
             text-align: center;
+
 
         }
 
@@ -36,93 +59,165 @@
             letter-spacing: $letter-spacing;
             font-size: $font-size-sm;
             display: flex;
-           
+            width: 200px;
+            margin: 0 auto;
+
 
             &-button {
+                background-color: $color-background-green;
                 display: flex;
                 flex-direction: column;
-                background-color: $color-background-green;
-                margin-left: 40px;
-                width: 75px;
-                white-space: nowrap;
-                margin-right: 5px;
-
-
-                &--detail {
-                    color:$color-background-dark;
-                }
+                margin-right: 10px;
+                width: 100px;
             }
-        }
-    }
-
-    &.cmp-image-top {
-        .cmp-teasercomponent__container{
-           top: 0;
-        }
-    
-    }
-    
-    &.cmp-text-bottom {
-        .cmp-teasercomponent__container-text {
-           position: fixed;
-    
-        }
-    }
-    
-    &.cmp-text-top {
-        .cmp-teasercomponent__container-text {
-            position: fixed;
-            top: 0;
-
-            
-    
-        }
-    }
-    
-    &.cmp-image-bottom {
-        .cmp-teasercomponent__container{
-       bottom: 0;
-       }
-    }
-    
-    &.cmp-image-left {
-        .cmp-teasercomponent__container {
-            left: 0;
-        }
-    }
-    
-    &.cmp-image-right {
-        .cmp-teasercomponent__container {
-            right: 0;
-        }
-    }
-    
-    &.cmp-without-image {
-        .cmp-teasercomponent{
-            display: none;
-        }
-    }
-    
-    &.cmp-blue-color {
-        .cmp-teasercomponent__container{
-            background-color: $color-link;
-        }
-    }
-    
-    &.cmp-red-color {
-        .cmp-teasercomponent__container {
-            background-color: $color-background-red;
-        }
-    
-        ;
-    }
-    
-    &.cmp-green-color {
-        .cmp-teasercomponent__container {
-            background-color: $color-background-green;
         }
     }
 
 }
 
+.cmp-image-left {
+    .cmp-teasercomponent__bg {
 
+        width: 50%;
+        min-height: 400px;
+        background-position: center;
+
+        @include min-screen(md) {
+            background-position: center;
+            background-size: cover;
+        }
+    }
+
+    .cmp-teasercomponent__container {
+
+        left: 172px;
+        width: 65%;
+        background-color: #ECECEC;
+
+        @include min-screen(md) {
+            
+            left: 400px;
+            top: 140px;
+
+        }
+
+        @include min-screen(lg) {
+          
+            left: 760px;
+            top: 140px;
+
+        }
+    }
+}
+
+.cmp-image-right {
+    .cmp-teasercomponent__bg {
+        background-position: center;
+        left: 180px;
+        width: 50%;
+        min-height: 400px;
+        position: inherit;
+
+        @include min-screen (md) {
+            background-size: cover;
+            background-position: center;
+            left: 410px;
+        }
+
+        @include min-screen(lg) {
+            background-size: cover;
+            background-position: center;
+            left: 750px;
+            right: 5px;
+        }
+    }
+
+    .cmp-teasercomponent__container {
+        right: 172px;
+        width: 103%;
+
+        @include min-screen(md) {
+            top: 140px;
+            right: 395px;
+        }
+
+        @include min-screen(lg) {
+            top: 140px;
+            right: 760px;
+        }
+    }
+}
+
+.cmp-without-image {
+    .cmp-teasercomponent__bg {
+        display: inline;
+    }
+
+    .cmp-teasercomponent__container {
+        position: initial;
+        width: auto;
+    }
+}
+
+.cmp-text-top-image-bottom {
+
+    .cmp-teasercomponent__container {
+        top: -1px;
+        height: fit-content;
+        width: 97%;
+        margin-right: -31px;
+
+        @include min-screen(md) {
+            position: static;
+            padding: 2px;
+            margin-top: 14px;
+            height: 170px;
+            width: 100%;
+        }
+    }
+}
+
+.cmp-image-top-text-bottom {
+    .cmp-teasercomponent__container {
+        bottom: 0;
+        height: 195px;
+        width: 98%;
+        margin-right: -31px;
+
+        @include min-screen(md) {
+            position: absolute;
+            margin-top: 10px;
+            height: 175px;
+            width: 100%;
+            bottom: 0;
+            padding-top: 22px;
+            right: 26px;
+        }
+    }
+
+    .cmp-teasercomponent__bg {
+        margin-top: 30px;
+    }
+}
+
+.cmp-colour-green {
+    .cmp-teasercomponent__container {
+        background-color: $color-background-green;
+    }
+
+    .cmp-teasercomponent__container-item-button {
+        background-color: $color-background;
+    }
+}
+
+.cmp-colour-red {
+    .cmp-teasercomponent__container {
+        background-color: $color-background-red;
+    }
+}
+
+.cmp-colour-blue {
+    .cmp-teasercomponent__container {
+        background-color: $color-link;
+    }
+}

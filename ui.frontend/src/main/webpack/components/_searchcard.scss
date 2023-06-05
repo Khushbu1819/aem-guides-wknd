@@ -1,0 +1,227 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
+
+.cmp-searchcard {
+    position: relative;
+
+    @include min-screen(md) {
+        width: $max-width;
+    }
+
+    &__card {
+        width: 185%;
+        background-color: $color-light-grey;
+        height: 409px;
+
+        @include min-screen(md) {
+            width: 48%;
+            height: 395px;
+        }
+
+        &-details {
+            padding: 60px;
+            margin-bottom: 5px;
+            margin-right: 20px;
+            position: relative;
+
+            @include min-screen(md) {
+                padding: 60px;
+                width: 85%;
+                margin-bottom: 5px;
+                margin-right: 20px;
+                position: relative;
+            }
+
+            &--name {
+                font-size: $font-size-xl;
+                color: $color-foreground;
+                font-weight: 700;
+                margin-bottom: 20px;
+            }
+
+            &--agent {
+                font-size: 15px;
+                font-weight: 500;
+                color: grey;
+            }
+
+            &--price {
+                color: $color-foreground;
+                font-size: $font-size-m;
+                margin-top: 30px;
+                display: block;
+                margin-bottom: 15px;
+
+                .icon {
+                    width: 30px;
+                    height: 30px;
+                    background-color: grey;
+                    border-radius: 50%;
+                    text-align: center;
+                    line-height: 35px;
+                    display: inline-block;
+                    margin-right: 10px;
+
+                    img {
+                        max-width: 16px;
+                        text-align: center;
+                        display: inline-block;
+                    }
+                }
+            }
+
+            &--detail {
+                display: block;
+                margin-bottom: 30px;
+                font-size: $font-size-m;
+                color: grey;
+            }
+
+            .rate {
+                position: absolute;
+                right: 60px;
+                top: 60px;
+
+                &__start {
+                    display: inline-block;
+
+                    .fa-star-o {
+
+                        &::before {
+                            content: "\f006";
+                        }
+                    }
+
+                }
+
+
+
+            }
+
+
+            .info {
+                display: inline-block;
+                width: $max-height;
+                left: 18px;
+                position: absolute;
+                bottom: -30px;
+
+                &__bedroom {
+                    margin: 0;
+                    list-style: none;
+                    margin-bottom: 5px;
+
+                    img {
+                        max-width: 30px;
+                        margin-right: 15px;
+                        display: inline;
+                        opacity: 0.5;
+                    }
+                }
+
+                &__bathroom {
+                    margin: 0;
+                    list-style: none;
+                    margin-bottom: 5px;
+
+                    img {
+                        max-width: 30px;
+                        margin-right: 15px;
+                        display: inline;
+                        opacity: 0.5;
+                    }
+                }
+            }
+
+            .button {
+                width: 17%;
+                text-align: center;
+                background-color: $color-background;
+                font-size: $font-size-m;
+                font-weight: 400;
+                padding: 12px 25px;
+                border-radius: 7px;
+                letter-spacing: 0.25px;
+                cursor: pointer;
+                height: 20px;
+                position: absolute;
+                display: flex;
+                right: 60px;
+                bottom: -11px;
+
+                a {
+                    color: $color-foreground;
+                    display: contents;
+
+                    .fa-eye {
+                        margin-right: 60px;
+                        width: 22px;
+                        height: 22px;
+                        background-color: hsl(219, 18%, 62%);
+                        color: $color-background;
+                        border-radius: 50%;
+                        display: inline-block;
+                        text-align: center;
+                        font-size: $font-size-sm;
+                        line-height: 22px;
+                    }
+                }
+
+                &__text {
+                    font-size: $font-size-m;
+                    top: 9px;
+                    position: absolute;
+                    right: 102px;
+                    margin-right: -59px;
+                }
+            }
+
+            :hover {
+                background-color: $color-grey;
+            }
+        }
+    }
+
+    &__image {
+
+        img {
+
+            max-height: 415px;
+            position: absolute;
+            left: 639px;
+            top: 0;
+
+            @include min-screen(md) {
+                max-height: 395px;
+                width: 50%;
+                margin-left: 95px;
+            }
+        }
+    }
+}
+
+.cmp-image-left {
+
+    img {
+        left: -10px;
+        position: absolute;
+    }
+
+    @include min-screen(md) {
+
+        img {
+
+            left: -107px;
+        }
+    }
+
+
+    .cmp-searchcard__card {
+        right: -664px;
+        position: relative;
+
+        @include min-screen(md) {
+            position: relative;
+            left: 751px;
+        }
+    }
+}

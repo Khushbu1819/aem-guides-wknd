@@ -1,0 +1,43 @@
+<sly data-sly-use.model="com.adobe.aem.guides.wknd.core.models.MultifieldComponentModel"
+    data-sly-use.templates="core/wcm/components/commons/v1/templates.html">
+    <sly data-sly-test="${!model.isEmpty}">
+
+        <div class="cmp-multifieldcomponent">
+            <div class="cmp-multifieldcomponent__leftbox">
+                <div class="cmp-multifieldcomponent__leftbox-list" data-sly-list.item="${model.multiple}">
+                    <div class="cmp-multifieldcomponent__leftbox-list--active">
+                        <div class="text show"><span class="icon"><img src="${item.icon}" alt=""></span>${item.text}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cmp-multifieldcomponent__container">
+                <ul class="content" data-sly-list.item="${model.multiple}">
+                    <li class="active">
+                        <div class="centerbox">
+                            <div class="centerbox__title">${item.title}</div>
+                            <div class="centerbox__description">${item.description @context='html' }</div>
+                            <div class="centerbox__button">
+                                <a class="centerbox__button-ctalink" href="${item.ctaLink}.html"> <i
+                                        class="fa fa-eye"></i>
+                                    <div class="centerbox__button-ctatext">${item.ctaText}</div>
+                                </a>
+
+                            </div>
+                        </div>
+
+                        <div class="rightbox">
+                            <div class="rightbox__image"><img src="${item.image}" alt=""></div>
+                        </div>
+                    </li>
+                </ul>
+
+            </div>
+
+
+        </div>
+    </sly>
+
+    <sly data-sly-call="${templates.placeholder @ isEmpty = model.isEmpty}"></sly>
+</sly>

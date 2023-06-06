@@ -45,31 +45,25 @@
                                             sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
                                             fieldLabel="Title"
                                             name="./title"/>
-                                        <!-- <description
-                                            jcr:primaryType="nt:unstructured"
-                                            sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
-                                            fieldLabel="Description"
-                                            name="./description"/> -->
-
                                             <description
-                                                    jcr:primaryType="nt:unstructured"
-                                                    sling:resourceType="cq/gui/components/authoring/dialog/richtext"
-                                                    fieldLabel="Description*"
-                                                    required="true"
-                                                    useFixedInlineToolbar="{Boolean}true"
-                                                    name="./description">
-                                                    <rtePlugins jcr:primaryType="nt:unstructured">
-                                                    <format
-                                                    jcr:primaryType="nt:unstructured"
-                                                    features="[bold,italic]"/>
-                                                    <justify
-                                                    jcr:primaryType="nt:unstructured"
-                                                    features="[]"/>
-                                                    <lists
-                                                    jcr:primaryType="nt:unstructured"
-                                                    features="[]"/>
-                                                    </rtePlugins>
-                                                    </description>
+                                              jcr:primaryType="nt:unstructured"
+                                              sling:resourceType="cq/gui/components/authoring/dialog/richtext"
+                                              fieldLabel="Description*"
+                                              required="true"
+                                              useFixedInlineToolbar="{Boolean}true"
+                                               name="./description">
+                                            <rtePlugins jcr:primaryType="nt:unstructured">
+                                                <format
+                                                jcr:primaryType="nt:unstructured"
+                                                features="[bold,italic]"/>
+                                            <justify
+                                                jcr:primaryType="nt:unstructured"
+                                                features="[]"/>
+                                                <lists
+                                                jcr:primaryType="nt:unstructured"
+                                                features="[]"/>
+                                            </rtePlugins>
+                                            </description>
                                     </items>
                                 </field>
                             </multifieldcollection>

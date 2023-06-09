@@ -1,0 +1,219 @@
+.cmp-multifieldcomponent {
+    width: 104%;
+    margin-left: -7px;
+    background-color: $color-background-blue;
+
+    @include min-screen(md) {
+        background-color: $color-background-blue;
+        width: $max-width;
+        flex-direction: row;
+        display: flex;
+        border-radius: 7px;
+    }
+
+    &__leftbox {
+        margin-top: 7px;
+        width: $max-width;
+
+        @include min-screen(md) {
+            width: 30%;
+            margin-top: 7px;
+        }
+
+        &-list {
+            color: $color-background;
+            font-size: $font-size;
+            margin-bottom: 512px;
+            height: 126px;
+            text-align: left;
+            line-height: 126px;
+            cursor: pointer;
+            margin-top: -7px;
+
+            &--active {
+                background-color: $color-background-blue;
+
+                .text {
+                    background-color: $color-grey;
+                    margin-bottom: 2px;
+
+                    .icon {
+                        display: inline-block;
+                        width: 66px;
+                        height: 66px;
+                        border-radius: 50%;
+                        line-height: 62px;
+                        background-color: $color-background;
+                        margin-right: 50px;
+                        margin-left: 44px;
+
+                        img {
+                            margin-bottom: -5px;
+                            max-width: 25px;
+                            text-align: center;
+                            margin-left: 20px;
+                            margin-top: 20px;
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+
+    &__container {
+        display: flex;
+        width: 70%;
+
+        .content {
+            width: $max-width;
+
+            @include min-screen (md) {
+                position: static;
+                list-style: none;
+                margin: 0;
+                padding: 0px;
+                height: 500px;
+                width: 100%;
+                align-items: center;
+            }
+
+            .active {
+                transition-delay: 0.3s;
+                position: relative;
+                z-index: 2;
+                opacity: 1;
+                display: none;
+
+
+
+
+                .centerbox {
+                    width: 116%;
+                    display: flex;
+                    flex-direction: column;
+
+                    @include min-screen(md) {
+                        width: 35%;
+                        margin-left: 70px;
+                        margin-top: 200px;
+                    }
+
+                    &__title {
+                        color: $color-background;
+                        font-size: $font-size-l;
+                        font-weight: 900;
+                        line-height: 27px;
+                        margin-bottom: 30px;
+                    }
+
+                    &__description {
+                        font-size: $font-size;
+                        opacity: 0.5;
+                        color: $color-background;
+                        font-weight: inherit;
+                        line-height: 30px;
+                        margin-bottom: -1px;
+                        margin-top: -21px;
+
+                        @include min-screen(md) {
+                            font-size: $font-size-m;
+                            color: $color-background;
+                            font-weight: inherit;
+                            line-height: 30px;
+                            margin-bottom: 25px;
+                        }
+                    }
+
+                    &__button {
+                        width: 70%;
+                        text-align: center;
+                        background-color: $color-background;
+                        font-size: $font-size-m;
+                        font-weight: 400;
+                        padding: 12px 25px;
+                        border-radius: 7px;
+                        letter-spacing: 0.25px;
+                        cursor: pointer;
+                        height: 20px;
+                        position: relative;
+
+                        a {
+                            color: $color-foreground;
+                            display: contents;
+
+                            .fa-eye {
+                                margin-right: 125px;
+                                width: 22px;
+                                height: 22px;
+                                background-color: $color-grey;
+                                color: $color-background;
+                                border-radius: 50%;
+                                display: inline-block;
+                                text-align: center;
+                                font-size: $font-size-sm;
+                                line-height: 22px;
+
+
+                            }
+                        }
+
+                        &-ctatext {
+                            font-size: $font-size-m;
+                            top: 13px;
+                            position: absolute;
+                            right: 75px;
+                        }
+                    }
+
+                    :hover {
+                        background-color: $color-grey;
+                    }
+                }
+
+                .rightbox {
+                    right: 236px;
+                    top: -210px;
+
+                    @include min-screen(md) {
+                        position: absolute;
+                        right: 0;
+                    }
+
+
+                    &__image {
+                        padding: 0px;
+
+                        @include min-screen(md) {
+                            padding: 60px;
+
+                        }
+
+                        img {
+                            max-width: 250px;
+                            max-height: 369px;
+                            height: 500px;
+                            top: 10px;
+                            margin-top: 25px;
+
+                            @include min-screen(md) {
+                                max-height: 511px;
+                                max-width: 450px;
+                            }
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+
+
+
+}
+
+.show {
+    display: block !important;
+    background-color: $color-background-blue !important;
+
+}

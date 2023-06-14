@@ -1,18 +1,52 @@
-
 //== Font
 
-$font-family:           "Helvetica Neue", Helvetica, Arial, sans-serif;
-$font-size:             16px;
-$font-height:           1.5;
+$font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-size: 16px;
+$font-size-base: 17px;
+$font-height: 1.5;
+$font-size-sm: 14px;
+$font-size-info: 23px;
+$font-size-xsm: 12px;
+$font-size-md: 30px;
+$font-weight: 100;
+$font-weight-semibold: 800;
+$letter-spacing: 4px;
+
 
 //== Color
 
 // Normal mode
-$color-foreground:      #202020;
-$color-background:      #ECECEC;
-$color-link:            #2020E0;
+$color-foreground: #202020;
+$color-background: #ECECEC;
+$color-link: #2020E0;
+$color-background-light: #d3d3d3;
+$color-light-background: rgb(133, 185, 185);
+$color-light-blue: lightblue;
+
 
 // Dark mode
 $color-foreground-dark: invert($color-foreground);
 $color-background-dark: invert($color-background);
-$color-link-dark:       invert($color-link);
+$color-link-dark: invert($color-link);
+
+// padding
+$padding-md: 45px;
+$padding-none: 1px;
+$padding-sm: 30px;
+$padding-xl: 105px;
+$padding-xxl: 190px;
+$padding-lg: 50px;
+$paddiing-base:80px;
+$padding-xxs: 38px;
+$padding-xs:16px;
+$padding-xs-a:22px;
+$padding-xxl-a:150px;
+$padding-xxl-ab: 155px;
+
+
+// height
+
+$max-height: 100%;
+
+// width
+$max-width: 100%;

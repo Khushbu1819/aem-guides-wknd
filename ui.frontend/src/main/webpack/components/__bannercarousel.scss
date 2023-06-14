@@ -1,0 +1,68 @@
+.cmp-bannercarousel {
+    &__container {
+        &--button {
+            &-prev {
+
+                height: 40px;
+                width: 40px;
+                border-radius: 50%;
+                border: 1px solid #ECECEC;
+                bottom: 37px;
+                top: unset;
+                position: absolute;
+                left: 15px;
+                display: block;
+                z-index: 20;
+
+
+                &::after {
+                    width: 40px;
+                    height: 40px;
+                    color: $color-background;
+                    font-size: 20px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+            }
+
+            &-next {
+                height: 40px;
+                width: 40px;
+                border-radius: 50%;
+                border: 1px solid #ECECEC;
+                bottom: 37px;
+                top: unset;
+                position: absolute;
+                right: 15px;
+                display: block;
+                z-index: 20;
+
+                &::after {
+                    width: 40px;
+                    height: 40px;
+                    color: $color-background;
+                    font-size: 20px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+            }
+        }
+
+        .swiper-pagination {
+
+            bottom: -25px;
+            color: #ECECEC;
+            font-size: 20px;
+            display: block;
+            height: 100px;
+
+            span {
+                color: $color-background;
+            }
+        }
+    }
+
+
+}

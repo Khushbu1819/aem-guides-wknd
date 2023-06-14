@@ -1,0 +1,85 @@
+.cmp-bannercomponent {
+
+    min-height: 568px;
+    height: $max-height;
+
+    &__container {
+        align-items: center;
+        background-color: $color-foreground;
+        display: flex;
+        flex-direction: column;
+        padding-top: 10px;
+        opacity: 0.9;
+        color: $color-background;
+
+        &--title {
+            margin-bottom: 10px;
+        }
+
+        &--contenttype {
+            font-size: $padding-sm;
+            font-weight: 700;
+            margin-bottom: 23px;
+            text-align: center;
+        }
+
+
+    }
+
+    &__button {
+        width: 62%;
+        background-color: $color-light-blue;
+        border-radius: 25px;
+        top: 225px;
+        position: absolute;
+        cursor: pointer;
+        right: 69px;
+        padding: 5px;
+        text-align: center;
+
+        &--linktext {
+            color: $color-foreground;
+            font-size: $font-size-sm;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        &--arrow {
+            color: $color-foreground;
+            margin-left: 10px;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+
+        :hover {
+            border-radius: 25px;
+            width: 97%;
+            background-color: $color-background;
+            display: block;
+        }
+
+    }
+
+    &__image {
+        bottom: 0;
+        top: 35%;
+        position: absolute;
+        z-index: -3;
+
+        &--img {
+            height: $max-height;
+            object-fit: cover;
+            width: $max-width;
+        }
+    }
+
+    &__bottom {
+        background-color: rgba(33, 33, 33, 0.8);
+        bottom: 0;
+        padding: 50px;
+        position: absolute;
+        width: 100%;
+    }
+
+}

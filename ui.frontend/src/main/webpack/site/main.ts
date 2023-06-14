@@ -1,8 +1,6 @@
-
 // Stylesheets
 import "./main.scss";
-
-// Javascript or Typescript
+import "../components/__bannercarousel";
+import "../components/**/*.js";
 import "./**/*.js";
 import "./**/*.ts";
-import '../components/**/*.js';

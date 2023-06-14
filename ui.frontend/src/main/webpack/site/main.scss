@@ -1,5 +1,14 @@
+@import "swiper/scss";
 
-@import 'variables';
-@import 'base';
-@import '../components/**/*.scss';
-@import './styles/*.scss';
+@import "swiper/scss/navigation";
+
+@import "swiper/scss/pagination";
+
+@import "swiper/scss/scrollbar";
+
+// @import "./vendor";
+@import "variables";
+@import "./styles/mixin";
+@import "base";
+@import "../components/**/*.scss";
+@import "./styles/*.scss";

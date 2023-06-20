@@ -24,6 +24,10 @@
                     align-items: center;
                     justify-content: center;
                 }
+                @include min-screen(md){
+                    display: none;
+                }
+               
             }
 
             &-next {
@@ -47,7 +51,12 @@
                     align-items: center;
                     justify-content: center;
                 }
+                @include min-screen(md){
+                    display: none;
+                }
             }
+          
+          
         }
 
         .swiper-pagination {
@@ -57,9 +66,14 @@
             font-size: 20px;
             display: block;
             height: 100px;
+            opacity: 0.5;
 
             span {
                 color: $color-background;
+            }
+
+            @include min-screen(md){
+                display: none;
             }
         }
     }

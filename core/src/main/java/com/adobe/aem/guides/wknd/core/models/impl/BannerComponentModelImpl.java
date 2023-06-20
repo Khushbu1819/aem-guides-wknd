@@ -1,9 +1,18 @@
 package com.adobe.aem.guides.wknd.core.models.impl;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+// import com.adobe.aem.guides.wknd.core.dto.SliderItem;
+import javax.annotation.PostConstruct;
+import javax.inject.Inject;
+import org.apache.sling.api.resource.Resource;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.models.annotations.DefaultInjectionStrategy;
 import org.apache.sling.models.annotations.Model;
+import org.apache.sling.models.annotations.Via;
+import org.apache.sling.models.annotations.injectorspecific.SlingObject;
 import org.apache.sling.models.annotations.injectorspecific.ValueMapValue;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -27,6 +36,12 @@ public class BannerComponentModelImpl implements BannerComponentModel {
     @ValueMapValue
     private String linktext;
 
+    @ValueMapValue
+    private String link;
+
+    @ValueMapValue
+    private String text;
+
     @Override
     public String getImage() {
         return image;
@@ -48,10 +63,21 @@ public class BannerComponentModelImpl implements BannerComponentModel {
     }
 
     @Override
+    public String getLink() {
+        return link;
+    }
+
+    @Override
+    public String getText() {
+        return text;
+    }
+
+    @Override
 
     public boolean isEmpty() {
 
         return StringUtils.isBlank(image) && StringUtils.isBlank(title) && StringUtils.isBlank(contenttype)
-                && StringUtils.isBlank(linktext);
+                && StringUtils.isBlank(linktext) && StringUtils.isBlank(link);
     }
+
 }

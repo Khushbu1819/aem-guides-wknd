@@ -3,6 +3,10 @@
     min-height: 568px;
     height: $max-height;
 
+    @include min-screen(md) {
+        min-height: 700px;
+    }
+
     &__container {
         align-items: center;
         background-color: $color-foreground;
@@ -12,8 +16,20 @@
         opacity: 0.9;
         color: $color-background;
 
+        @include min-screen(md) {
+            padding: 142px;
+            max-width: 1213px;
+            align-items: flex-start;
+            background: transparent;
+        }
+
         &--title {
             margin-bottom: 10px;
+
+            @include min-screen(md) {
+                font-size: 25px;
+                font-weight: 500;
+            }
         }
 
         &--contenttype {
@@ -21,6 +37,16 @@
             font-weight: 700;
             margin-bottom: 23px;
             text-align: center;
+
+            @include min-screen(md) {
+                font-size: 50px;
+                max-width: 57%;
+                text-align: left;
+                letter-spacing: normal;
+                line-height: 55px;
+                font-weight: 600;
+
+            }
         }
 
 
@@ -32,10 +58,25 @@
         border-radius: 25px;
         top: 225px;
         position: absolute;
-        cursor: pointer;
+         cursor: pointer;
         right: 69px;
         padding: 5px;
         text-align: center;
+
+        @include min-screen(md) {
+            background-color: white;
+            border-radius: 25px;
+            top: 316px;
+            position: absolute;
+            cursor: pointer;
+            padding: 2px;
+            left: 140px;
+            width: 15%;
+        }
+
+        a {
+            display: contents;
+        }
 
         &--linktext {
             color: $color-foreground;
@@ -52,20 +93,21 @@
         }
 
 
-        :hover {
-            border-radius: 25px;
-            width: 97%;
-            background-color: $color-background;
-            display: block;
-        }
-
     }
+
 
     &__image {
         bottom: 0;
         top: 35%;
         position: absolute;
         z-index: -3;
+
+        @include min-screen(md) {
+            top: 0;
+            left: 0;
+            right: 0;
+            position: absolute;
+        }
 
         &--img {
             height: $max-height;
@@ -80,6 +122,109 @@
         padding: 50px;
         position: absolute;
         width: 100%;
+
+        @include min-screen(md) {
+            background-color: rgba(33, 33, 33, 0.8);
+            bottom: 0;
+            position: absolute;
+            width: 100%;
+            height: 20%;
+            padding: 0;
+        }
+
+        &__container {
+            @include min-screen(md) {
+                margin-left: 115px;
+                margin-right: 228px;
+                height: 100%;
+            }
+
+            &__items {
+
+                display: none;
+                @include min-screen(md) {
+                    display: flex;
+                    -ms-flex-direction: row;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    width: 100%;
+                    height: 100%;
+                    -webkit-box-align: stretch;
+                    -ms-flex-align: stretch;
+                    align-items: stretch;
+                    margin: 0;
+                    padding: 0;
+
+                }
+
+                &--list {
+                    @include min-screen(md) {
+                        width: 32%;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: flex-start;
+                        justify-content: center;
+
+
+                    }
+                
+                    &-arrow {
+                        @include min-screen(md) {
+                            display: inline-block;
+                            width: 30px;
+                            height: 30px;
+                            border: 1px solid white;
+                            border-radius: 50%;
+                            margin-left: 3px;
+                            cursor: pointer;
+                            position: relative;
+
+
+                            ::after {
+                                @include min-screen(md) {
+                                    content: "";
+                                    display: inline-block;
+                                    margin-top: 9px;
+                                    margin-left: 6px;
+                                    width: 10px;
+                                    height: 10px;
+                                    border-top: 2px solid white;
+                                    border-right: 2px solid white;
+                                    -webkit-transform: rotate(45deg);
+                                    transform: rotate(45deg);
+                                    cursor: pointer;
+                                }
+                            }
+                        }
+                    }
+
+                    &-text {
+
+                        @include min-screen(md) {
+                            margin-top: 1rem;
+                            font-size: 1.125rem;
+                            color: grey;
+                        }
+
+                    }
+                    
+                }
+                .show {
+                    border-top: 3px solid white;
+                        @include min-screen(md){
+                            cursor: pointer;
+                    .cmp-bannercomponent__bottom__container__items--list-arrow{
+                        transform: rotate(-90deg);
+                        cursor: pointer;
+                        
+                       
+                    }
+                        }
+                    
+                } 
+                
+            }
+        }
     }
 
 }

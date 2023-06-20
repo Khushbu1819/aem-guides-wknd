@@ -10,9 +10,9 @@
             </div>
 
             <div class="cmp-bannercomponent__button">
-                <a href="https://www.w3schools.com/" class="cmp-bannercomponent__button--link">
+                <a class="cmp-bannercomponent__button--link" href="${item.ctaLink}.html">
                     <div class="cmp-bannercomponent__button--linktext">${model.LinkText}<span
-                            class="cmp-bannercomponent__button--arrow">&rarr;</span>${model.arrow}</div>
+                            class="cmp-bannercomponent__button--arrow">&rarr;</span></div>
                 </a>
             </div>
 
@@ -20,10 +20,36 @@
                 <img src="${model.Image}" alt="" class="cmp-bannercomponent__image--img">
             </div>
 
-            <div class="cmp-bannercomponent__bottom"></div>
+            <div class="cmp-bannercomponent__bottom">
+                <div class="cmp-bannercomponent__bottom__container">
+                    <ul class="cmp-bannercomponent__bottom__container__items">
+                        <li class="cmp-bannercomponent__bottom__container__items--list show">
+                            <span class="cmp-bannercomponent__bottom__container__items--list-arrow">
+                                <i class='fas fa-angle-right'></i>
+                            </span>
+                            <div class="cmp-bannercomponent__bottom__container__items--list-text">${model.text}</div>
+                        </li>
+
+                        <li class="cmp-bannercomponent__bottom__container__items--list">
+                            <span class="cmp-bannercomponent__bottom__container__items--list-arrow">
+                                <i class='fas fa-angle-right'></i>
+                            </span>
+                            <div class="cmp-bannercomponent__bottom__container__items--list-text">${model.text}</div>
+
+                        </li>
+                        <li class="cmp-bannercomponent__bottom__container__items--list">
+                            <span class="cmp-bannercomponent__bottom__container__items--list-arrow">
+                                <i class='fas fa-angle-right'></i>
+                            </span>
+                            <div class="cmp-bannercomponent__bottom__container__items--list-text">${model.text}</div>
+
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
 
         </div>
-
     </sly>
 
     <sly data-sly-call="${templates.placeholder @ isEmpty = model.isEmpty}"></sly>

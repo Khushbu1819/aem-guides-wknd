@@ -12,9 +12,44 @@ import Swiper, { Navigation, Pagination } from 'swiper';
 
             config.removeAttribute("data-cmp-is");
             const slider = config.querySelector('.cmp-bannercarousel__container');
-            if (slider) {
+            const btn = config.querySelector('.cmp-bannercomponent__bottom__container__items');
+            var btns = btn.querySelectorAll(".cmp-bannercomponent__bottom__container__items--list");
+            let slides = config.querySelectorAll(".swiper-slide");
+            if (slides && window.innerWidth > 786) {
+                slides.forEach(slide => {
+                    slide.style.display = "none";
+                })
+                slides[0].style.display = "block";
+
+            }
+            config.querySelectorAll('.cmp-bannercomponent__bottom__container__items').forEach(el => {
+                let btns = el.querySelectorAll('.cmp-bannercomponent__bottom__container__items--list');
+
+                for (let i = 0; i < btns.length; i++) {
+                    btns[i].addEventListener("click", function () {
+                        slides.forEach(slide => {
+                            slide.style.display = "none";
+                            slide.classList.remove("show")
+                        })
+                        btns.forEach(btn => {
+                            btn.classList.remove("show")
+                        })
+
+                        slides[i].style.display = "block";
+                        btns[i].classList.add("show")
+                    });
+
+
+                }
+
+            })
+
+
+
+            if (slider && window.innerWidth < 786) {
                 const swiper = new Swiper('.mySwiper', {
                     modules: [Navigation, Pagination],
+
 
                     pagination: {
                         el: '.swiper-pagination',
@@ -22,8 +57,8 @@ import Swiper, { Navigation, Pagination } from 'swiper';
 
                     },
                     navigation: {
-                        nextEl: '.cmp-bannercarousel__container--button-next',
-                        prevEl: '.cmp-bannercarousel__container--button-prev',
+                        nextEl: '.swiper-button-next',
+                        prevEl: '.swiper-button-prev',
                     },
                 });
             }

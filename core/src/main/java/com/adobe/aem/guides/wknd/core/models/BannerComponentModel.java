@@ -1,4 +1,5 @@
 package com.adobe.aem.guides.wknd.core.models;
+
 public interface BannerComponentModel {
 
     String getImage();
@@ -10,9 +11,6 @@ public interface BannerComponentModel {
     String getLinkText();
 
     String getLink();
-
-    String getText();
-
 
     boolean isEmpty();
 }

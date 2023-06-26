@@ -1,4 +1,5 @@
 <div data-sly-use.carousel="com.adobe.cq.wcm.core.components.models.Carousel"
+     data-sly-use.model="com.adobe.aem.guides.wknd.core.models.BannerCarouselModel"
      data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
      data-sly-use.controlsTemplate="controls.html" data-panelcontainer="${wcmmode.edit && 'carousel'}"
      id="${carousel.id}" class="cmp-bannercarousel" data-cmp-is="carousel" role="group"
@@ -23,7 +24,24 @@
                     data-cmp-data-layer="${item.data.json}" data-cmp-hook-carousel="item">
                </div>
           </div>
+
+          <div class="cmp-bannercarousel__container__bottom">
+               <div class="cmp-bannercarousel__container__bottom__container">
+                   <ul class="cmp-bannercarousel__container__bottom__container__items">
+                      
+                           <sly data-sly-list="${model.panelList}">
+                              <li class="cmp-bannercarousel__container__bottom__container__items--list show">
+                               <span class="cmp-bannercarousel__container__bottom__container__items--list-icon"> <img src="/etc.clientlibs/wknd/clientlibs/clientlib-site/resources/images/forwardimage1.png" alt=""></span>
+                               <div class= "cmp-bannercarousel__container__bottom__container__items--list-text">${item}</div>
+                              </li>
+                              </sly>
+                       
+   
+                   </ul>
+               </div>
+           </div>
      </div>
+
 </div>
 <sly data-sly-resource="${resource.path @ resourceType='wcm/foundation/components/parsys/newpar', appendPath='/*', decorationTagName='div', cssClassName='new section aem-Grid-newComponent'}"
      data-sly-test="${(wcmmode.edit || wcmmode.preview) && carousel.items.size < 1}"></sly>

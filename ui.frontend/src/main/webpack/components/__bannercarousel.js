@@ -12,8 +12,8 @@ import Swiper, { Navigation, Pagination } from 'swiper';
 
             config.removeAttribute("data-cmp-is");
             const slider = config.querySelector('.cmp-bannercarousel__container');
-            const btn = config.querySelector('.cmp-bannercomponent__bottom__container__items');
-            var btns = btn.querySelectorAll(".cmp-bannercomponent__bottom__container__items--list");
+            const btn = config.querySelector('.cmp-bannercarousel__container__bottom__container__items');
+            var btns = btn.querySelectorAll('.cmp-bannercarousel__container__bottom__container__items--list');
             let slides = config.querySelectorAll(".swiper-slide");
             if (slides && window.innerWidth > 786) {
                 slides.forEach(slide => {
@@ -22,8 +22,8 @@ import Swiper, { Navigation, Pagination } from 'swiper';
                 slides[0].style.display = "block";
 
             }
-            config.querySelectorAll('.cmp-bannercomponent__bottom__container__items').forEach(el => {
-                let btns = el.querySelectorAll('.cmp-bannercomponent__bottom__container__items--list');
+            config.querySelectorAll('.cmp-bannercarousel__container__bottom__container__items').forEach(el => {
+                let btns = el.querySelectorAll('.cmp-bannercarousel__container__bottom__container__items--list');
 
                 for (let i = 0; i < btns.length; i++) {
                     btns[i].addEventListener("click", function () {

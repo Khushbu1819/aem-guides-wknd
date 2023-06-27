@@ -17,6 +17,13 @@
         color: $color-background;
 
         @include min-screen(md) {
+            padding: 90px;
+            max-width: 1213px;
+            align-items: flex-start;
+            background: transparent;
+        }
+
+        @include min-screen(lg) {
             padding: 142px;
             max-width: 1213px;
             align-items: flex-start;
@@ -27,6 +34,12 @@
             margin-bottom: 10px;
 
             @include min-screen(md) {
+                width: 309px;
+                font-size: $font-size-info;
+                font-weight: $font-weight-bold;
+            }
+
+            @include min-screen(lg) {
                 font-size: $font-size-info;
                 font-weight: $font-weight-bold;
             }
@@ -39,13 +52,21 @@
             text-align: center;
 
             @include min-screen(md) {
+                font-size: 39px;
+                max-width: 70%;
+                text-align: left;
+                line-height: 39px;
+                font-weight: 600;
+
+            }
+
+            @include min-screen(lg) {
                 font-size: 50px;
                 max-width: 57%;
                 text-align: left;
                 letter-spacing: normal;
                 line-height: 55px;
                 font-weight: 600;
-
             }
         }
 
@@ -58,13 +79,20 @@
         border-radius: 25px;
         top: 225px;
         position: absolute;
-         cursor: pointer;
+        cursor: pointer;
         right: 69px;
         padding: 5px;
         text-align: center;
 
         @include min-screen(md) {
-            background-color:$color-background;
+            background-color: $color-background;
+            top: 304px;
+            left: 93px;
+            width: 25%;
+        }
+
+        @include min-screen(lg) {
+            background-color: $color-background;
             border-radius: 25px;
             top: 316px;
             position: absolute;

@@ -64,8 +64,8 @@
         .swiper-pagination {
 
             bottom: -25px;
-            color:$color-background;
-            font-size:$font-size-l;
+            color: $color-background;
+            font-size: $font-size-l;
             display: block;
             height: 100px;
             opacity: 0.5;
@@ -100,7 +100,7 @@
                 @include min-screen(md) {
                     margin-left: 115px;
                     margin-right: 228px;
-                    height:$max-height;
+                    height: $max-height;
                 }
 
                 &__items {
@@ -137,7 +137,7 @@
                             }
 
                             img {
-                                @include min-screen(md){
+                                @include min-screen(md) {
                                     width: 50px;
                                     height: 50px;
                                 }
@@ -148,12 +148,18 @@
                         &-text {
 
                             @include min-screen(md) {
+                                margin-top: 0px;
+                                font-size: $font-size-sm;
+                                color:$color-light-grey;
+                                margin-left: 25px;
+                            }
+
+                            @include min-screen(lg) {
                                 margin-top: 15px;
                                 font-size: $font-size-l;
                                 color: $color-light-grey;
                                 margin-left: 25px;
                             }
-
                         }
 
                     }

@@ -6,4 +6,6 @@ public interface BannerCarouselModel {
     
     List<String> getPanelList();
     
+    boolean isEmpty();
+    
 }
